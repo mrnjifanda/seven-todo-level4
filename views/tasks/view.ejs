@@ -1,0 +1,20 @@
+<%- include('../inc/header') %>
+
+    <h1 class="center">
+        <%= task.name %>
+    </h1>
+
+    <span class="date">
+        <%= task.date %>
+    </span>
+
+    <p class="descrition">
+        <%= task.description %>
+    </p>
+
+    <span class="status">
+        Is completed: <%= task.is_completed %>
+    </span>
+    <br><br>
+
+    <%- include('../inc/footer') %>

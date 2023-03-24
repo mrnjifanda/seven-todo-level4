@@ -1,0 +1,6 @@
+1 => Added *go back* button;
+2 => Authentification (User and Admin)
+3 => Check if user is user login is admin before deleting task
+4 => Find librairie to valided data in node and using
+5 => Show message in query to user (in html page)
+6 => Add Mark is completed

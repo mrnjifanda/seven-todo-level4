@@ -1,0 +1,11 @@
+<div class="has-errors">
+    <% if (errors) { %>
+        <ul>
+            <% errors.forEach(error=> { %>
+                <li class="<%= error.type %>">
+                    <%= error.message %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+</div>

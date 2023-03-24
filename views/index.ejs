@@ -1,0 +1,47 @@
+<%- include('inc/header') %>
+  <div class="center">
+    <a class="clear-btn" href="/task/add-new"> Add new task</a>
+  </div>
+  <div class="controls">
+    <div class="filters">
+      <span class="active" id="all">All</span>
+      <span id="pending">Pending</span>
+      <span id="completed">Completed</span>
+    </div>
+    <button class="clear-btn">Clear All</button>
+  </div>
+  <ul class="task-box" id="content-all">
+
+    <% tasks.forEach(task=> {
+      completed = task.is_completed == true ? 'checked' : '' ; %>
+      <li class="task">
+        <label for="<%= task._id %>">
+          <input type="checkbox" id="<%= task._id %>" <%=completed %>>
+          <p class="<%= completed %>">
+            <%= task.name %>
+          </p>
+        </label>
+        <div class="settings">
+          <i onclick="showMenu(this)" class="uil uil-ellipsis-h">Ations</i>
+          <ul class="task-menu">
+            <li><a href="/task/view/<%= task._id %>">View</a></li>
+            <li><a href="/task/edit/<%= task._id %>">Edit</a></li>
+            <li>
+              <form action="/task/delete/<%= task._id %>" class="form-delete" method="post">
+                <button type="submit">Delete</button>
+              </form>
+            </li>
+      </li>
+  </ul>
+  </div>
+  </li>
+  <% }) %>
+    </ul>
+    <ul class="task-box" id="content-pending">
+      <li>Pending</li>
+    </ul>
+    <ul class="task-box" id="content-completed">
+      <li>Completed</li>
+    </ul>
+
+    <%- include('inc/footer') %>

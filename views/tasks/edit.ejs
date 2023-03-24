@@ -1,0 +1,24 @@
+<%- include('../inc/header') %>
+    <form action="/task/edit/<%= task._id %>" method="post">
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="text" name="name" value="<%= task.name %>" placeholder="Add a task name">
+        </div>
+
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="datetime-local" name="date" value="<%= task.date %>" placeholder="Date">
+        </div>
+
+        <div class="task-input has-textarea">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <textarea name="description" cols="30" rows="10"><%= task.description %></textarea>
+        </div>
+
+        <%- include('../inc/error') %>
+
+            <div class="task-input">
+                <button class="clear-btn" type="submit">Edit task</button>
+            </div>
+    </form>
+    <%- include('../inc/footer') %>
