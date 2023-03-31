@@ -345,3 +345,21 @@ li {
   border: 0;
   background: transparent;
 }
+
+.form-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-btn a {
+  background: #000;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.alert {
+  margin: 20px;
+}

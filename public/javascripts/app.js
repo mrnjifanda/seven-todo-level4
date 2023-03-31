@@ -24,3 +24,17 @@ function showMenu(selectedTask) {
         }
     });
 }
+
+function hideQueryMessage() {
+
+    const contentMesage = document.querySelector('.has-alert');
+    if (contentMesage) {
+
+        setTimeout(() => {
+
+            contentMesage.style.display = 'none';
+        }, 3000);
+    }
+}
+
+hideQueryMessage();

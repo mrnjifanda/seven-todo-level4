@@ -15,8 +15,10 @@ router.get('/edit/:id', async (req, res) => {
 
 router.get('/add-new', (req, res) => {
 
+  let show_message_query = functions.show_message(req);
   return res.render('tasks/add', {
-    errors: null
+    errors: null,
+    show_message_query
   });
 });
 
@@ -43,8 +45,7 @@ router.post('/add-new', async function (req, res, next) {
   if (errors.length === 0) {
 
     const task = await Task.find({ name: body.name });
-    console.log(task);
-    if (task.lenght === 0) {
+    if (task.length !== 0) {
 
       errors.push({
         type: 'warning',

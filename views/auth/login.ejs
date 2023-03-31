@@ -1,0 +1,20 @@
+<%- include('../inc/header') %>
+
+    <form action="/auth/login" method="post">
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="text" name="email" placeholder="Your email">
+        </div>
+
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="password" name="password" placeholder="Your password">
+        </div>
+
+        <%- include('../inc/error') %>
+
+            <div class="task-input">
+                <button class="clear-btn" type="submit">Login</button>
+            </div>
+    </form>
+    <%- include('../inc/footer') %>

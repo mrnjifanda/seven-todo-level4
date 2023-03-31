@@ -1,3 +1,4 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -6,10 +7,11 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const taskRouter = require('./routes/task');
+const authRouter = require('./routes/auth');
+const accountRouter = require('./routes/account');
 
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://127.0.0.1:27017/sevenToDo', {
+mongoose.connect(process.env.BD_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -34,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/task', taskRouter);
+app.use('/auth', authRouter);
+app.use('/account', accountRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

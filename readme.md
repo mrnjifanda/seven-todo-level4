@@ -12,5 +12,7 @@
 
     cd seven-todo-level4
 
+    Create .env file anf add you personal values
+
     npm install
 ```

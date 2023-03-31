@@ -1,0 +1,47 @@
+<%- include('../inc/header') %>
+
+    <form action="/auth/register" method="post">
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="text" name="name" placeholder="Your name">
+        </div>
+
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="datetime" name="date-of-birth" placeholder="Your date of birth">
+        </div>
+
+        <div class="task-input has-textarea">
+            <select name="role">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+        </div>
+
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="text" name="username" placeholder="Your username">
+        </div>
+
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="email" name="email" placeholder="Your email">
+        </div>
+
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="password" name="password" placeholder="Your password">
+        </div>
+
+        <div class="task-input">
+            <img src="/images/bars-icon.svg" alt="icon">
+            <input type="password" name="password-confirm" placeholder="Confirm your password">
+        </div>
+
+        <%- include('../inc/error') %>
+
+            <div class="task-input">
+                <button class="clear-btn" type="submit">Register</button>
+            </div>
+    </form>
+    <%- include('../inc/footer') %>
